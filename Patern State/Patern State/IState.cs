@@ -6,7 +6,7 @@ namespace Patern_State
 {
     interface IState
     {
-        public abstract void warm_up(Context context);
-        public abstract void cool(Context context);
+        public void warm_up(Context context);
+        public void cool(Context context);
     }
 }
