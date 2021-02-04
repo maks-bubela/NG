@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Pattern_Chain_of_Responsibility
 {
-    class ATM
+    class Valuta
     {
-        public ATM next;
+        public Valuta next;
         public int denomination;
         public int quantity;
         private string result = "";
         private string error = "The ATM is unable to process this request.";
-        public void SetMoney(int denomination, int quantity)
+        public Valuta(int denomination, int quantity)
         {
             this.denomination = denomination;
             this.quantity = quantity;
@@ -22,7 +22,7 @@ namespace Pattern_Chain_of_Responsibility
             for (int i = 0; i < quantity && summ - denomination >= 0; i++)
             {
                 summ -= denomination;
-                if (summ - denomination <= 0 || i + 1 == quantity)
+                if ((summ - denomination < 0 || i + 1 == quantity))
                     result += (i + 1) + " : " + denomination + "\n";
             }
             if (summ != 0)
